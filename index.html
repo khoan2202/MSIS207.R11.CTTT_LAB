@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khac Di Choi Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">
+        Skip to main content
+    </a>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Primary navigation">
+            <a href="#" class="logo">
+                MyPortfolio
+            </a>
+            <ul class="nav-links">
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+            <button
+                type="button"
+                id="theme-btn"
+                aria-label="Toggle dark mode"
+                aria-pressed="false">
+                🌙
+            </button>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero" id="about">
+            <figure class="hero-image">
+                <img
+                    src="download.jpg"
+                    alt="Developer profile portrait"
+                    width="400"
+                    height="400">
+            </figure>
+            <article class="hero-content">
+                <p class="eyebrow">
+                    Software Engineer
+                </p>
+                <h1>
+                    Hi, I'm Khac Di Choi
+                </h1>
+                <p>
+                    I build modern, accessible and responsive web
+                    applications using HTML, CSS and JavaScript.
+                </p>
+                <a href="#projects" class="button">
+                    View My Projects
+                </a>
+            </article>
+        </section>
+
+        <section id="skills" class="section">
+            <header class="section-header">
+                <p class="eyebrow">TECHNOLOGIES</p>
+                <h2>
+                    Skills
+                </h2>
+                <p>
+                    Technologies and tools I use to build web applications.
+                </p>
+            </header>
+            <ul class="skills-grid">
+                <li class="skill-card">
+                    <strong>HTML5</strong>
+                    <span>Semantic Web</span>
+                </li>
+                <li class="skill-card">
+                    <strong>CSS3</strong>
+                    <span>Responsive Design</span>
+                </li>
+                <li class="skill-card">
+                    <strong>JavaScript</strong>
+                    <span>ES6+ Development</span>
+                </li>
+                <li class="skill-card">
+                    <strong>Git</strong>
+                    <span>Version Control</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="projects" class="section">
+            <header class="section-header">
+                <p class="eyebrow">MY WORK</p>
+                <h2>
+                    Projects
+                </h2>
+            </header>
+
+            <section class="project-grid" aria-label="Project list">
+                <article class="project-card">
+                    <header class="card-header">
+                        <h3>
+                            Portfolio Website
+                        </h3>
+                        <span class="badge">
+                            HTML/CSS
+                        </span>
+                    </header>
+                    <p>
+                        A responsive personal portfolio website
+                        designed with semantic HTML and modern CSS.
+                    </p>
+                    <footer class="card-footer">
+                        <a href="#" aria-label="View Portfolio Website project">
+                            View Project →
+                        </a>
+                    </footer>
+                </article>
+
+                <article class="project-card">
+                    <header class="card-header">
+                        <h3>
+                            Task Manager
+                        </h3>
+                        <span class="badge">
+                            JavaScript
+                        </span>
+                    </header>
+                    <p>
+                        A simple task management application
+                        using JavaScript DOM APIs.
+                    </p>
+                    <footer class="card-footer">
+                        <a href="#" aria-label="View Task Manager project">
+                            View Project →
+                        </a>
+                    </footer>
+                </article>
+
+                <article class="project-card">
+                    <header class="card-header">
+                        <h3>
+                            Weather Dashboard
+                        </h3>
+                        <span class="badge">
+                            API
+                        </span>
+                    </header>
+                    <p>
+                        A responsive dashboard for displaying
+                        weather information from a web API.
+                    </p>
+                    <footer class="card-footer">
+                        <a href="#" aria-label="View Weather Dashboard project">
+                            View Project →
+                        </a>
+                    </footer>
+                </article>
+            </section>
+        </section>
+
+        <section id="contact" class="section">
+            <header class="section-header">
+                <p class="eyebrow">GET IN TOUCH</p>
+                <h2>
+                    Contact Me
+                </h2>
+                <p>
+                    Have a project or question? Send me a message.
+                </p>
+            </header>
+            <form class="contact-form" action="#" method="post">
+                <p>
+                    <label for="name">
+                        Full Name
+                    </label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        minlength="3">
+                </p>
+                <p>
+                    <label for="email">
+                        Email Address
+                    </label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required>
+                </p>
+                <p>
+                    <label for="message">
+                        Message
+                    </label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        required
+                        minlength="10"></textarea>
+                </p>
+                <button type="submit" class="button">
+                    Send Message
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            © 2026 KhacDiChoi. All rights reserved.
+        </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
