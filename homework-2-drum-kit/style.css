@@ -1,0 +1,61 @@
+
+:root {
+  --mau-nen: #0f172a;
+  --mau-the: #1e293b;
+  --mau-chu: #ffffff;
+  --mau-nhan: #38bdf8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 30px 16px;
+  font-family: Arial, sans-serif;
+  background: var(--mau-nen);
+  color: var(--mau-chu);
+  text-align: center;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+}
+
+section {
+  margin: 32px 0;
+}
+
+.nut-trong {
+  min-width: 120px;
+  min-height: 110px;
+  padding: 16px;
+  margin: 8px;
+  border: 2px solid var(--mau-nhan);
+  border-radius: 12px;
+  background: var(--mau-the);
+  color: var(--mau-chu);
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.nut-trong.dang-nhan {
+  background: var(--mau-nhan);
+  color: #0f172a;
+  transform: scale(1.05);
+}
+
+#bat-dau,
+#dung,
+#phat-lai {
+  padding: 12px 16px;
+  margin: 6px;
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 3px;
+}
