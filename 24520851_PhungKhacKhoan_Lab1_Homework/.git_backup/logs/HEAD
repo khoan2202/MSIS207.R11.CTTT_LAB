@@ -1,9 +1,0 @@
-0000000000000000000000000000000000000000 ba27e473cba4822829b59bd149b12793e02f08f7 khoan2202 <khackhoan252206@gmail.com> 1791480709 +0700	commit (initial): docs: phan chia cong viec va quy tac du an
-ba27e473cba4822829b59bd149b12793e02f08f7 ab410532a6f967579bc04acabc1f88105ba0f5d2 khoan2202 <khackhoan252206@gmail.com> 1791480801 +0700	commit: feat(html): xây dựng cấu trúc trang giới thiệu cá nhân
-ab410532a6f967579bc04acabc1f88105ba0f5d2 495c53c4fe9c1405a7d896e0d00557e611284324 khoan2202 <khackhoan252206@gmail.com> 1791480856 +0700	commit: feat(css): thiết kế giao diện và bố cục tương thích điện thoại
-495c53c4fe9c1405a7d896e0d00557e611284324 0b37cf4e69b9d618ba11150b30da6d2e53c091bb khoan2202 <khackhoan252206@gmail.com> 1791480874 +0700	commit: feat(js): chuyển giao diện sáng tối và kiểm tra biểu mẫu
-0b37cf4e69b9d618ba11150b30da6d2e53c091bb b9e7b884f61f3f33ccf925bdca9b9c4033d53fdb khoan2202 <khackhoan252206@gmail.com> 1791481432 +0700	commit: perf: tối ưu hiệu suất và lưu kết quả kiểm tra
-b9e7b884f61f3f33ccf925bdca9b9c4033d53fdb 8f344d844fbe6cf0b9e2b05b5c343e5c96d7be0e khoan2202 <khackhoan252206@gmail.com> 1791483759 +0700	commit: feat: add homework 2 and homework 3
-8f344d844fbe6cf0b9e2b05b5c343e5c96d7be0e 0000000000000000000000000000000000000000 khoan2202 <khackhoan252206@gmail.com> 1791483794 +0700	Branch: renamed refs/heads/master to refs/heads/main
-0000000000000000000000000000000000000000 8f344d844fbe6cf0b9e2b05b5c343e5c96d7be0e khoan2202 <khackhoan252206@gmail.com> 1791483794 +0700	Branch: renamed refs/heads/master to refs/heads/main
-8f344d844fbe6cf0b9e2b05b5c343e5c96d7be0e dea8a7465a076b101201789c0235dddbd44624f8 khoan2202 <khackhoan252206@gmail.com> 1791484455 +0700	commit (merge): feat: add homework projects
