@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Trang giới thiệu cá nhân</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Liên kết giúp bỏ qua phần điều hướng -->
+  <a href="#noi-dung" class="bo-qua">
+    Chuyển đến nội dung chính
+  </a>
+
+  <header>
+    <h1>Trang giới thiệu cá nhân</h1>
+
+    <nav aria-label="Điều hướng chính">
+      <ul>
+        <li><a href="#gioi-thieu">Giới thiệu</a></li>
+        <li><a href="#ky-nang">Kỹ năng</a></li>
+        <li><a href="#du-an">Dự án</a></li>
+        <li><a href="#lien-he">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <button id="nut-giao-dien"
+            type="button"
+            aria-pressed="false">
+      Chuyển chế độ tối
+    </button>
+  </header>
+
+  <main id="noi-dung">
+
+    <section id="gioi-thieu">
+      <h2>Giới thiệu bản thân</h2>
+      <p>
+        Xin chào! Tôi là sinh viên ngành
+        Công nghệ thông tin.
+        Tôi yêu thích lập trình website.
+      </p>
+    </section>
+
+    <section id="ky-nang">
+      <h2>Kỹ năng lập trình</h2>
+
+      <ul class="danh-sach-ky-nang">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Git và GitHub</li>
+      </ul>
+    </section>
+
+    <section id="du-an">
+      <h2>Các dự án của tôi</h2>
+
+      <section class="luoi-du-an"
+               aria-label="Danh sách dự án">
+
+        <article class="the-du-an">
+          <h3>Website giới thiệu cá nhân</h3>
+          <p>
+            Website được xây dựng
+            bằng HTML, CSS và JavaScript.
+          </p>
+        </article>
+
+        <article class="the-du-an">
+          <h3>Bộ trống điện tử</h3>
+          <p>
+            Ứng dụng phát âm thanh
+            bằng thao tác bàn phím.
+          </p>
+        </article>
+
+      </section>
+    </section>
+
+    <section id="lien-he">
+      <h2>Liên hệ với tôi</h2>
+
+      <form id="bieu-mau-lien-he">
+        <label for="ho-ten">Họ và tên</label>
+        <input id="ho-ten"
+               name="ho-ten"
+               type="text"
+               minlength="3"
+               required>
+
+        <label for="email">Email</label>
+        <input id="email"
+               name="email"
+               type="email"
+               required>
+
+        <button type="submit">Gửi liên hệ</button>
+
+        <p id="thong-bao"
+           role="status"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 - Trang giới thiệu cá nhân</p>
+  </footer>
+
+</body>
+</html>
