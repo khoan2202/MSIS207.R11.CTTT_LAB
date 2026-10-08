@@ -1,0 +1,76 @@
+
+:root {
+  --mau-nen: #0f172a;
+  --mau-the: #1e293b;
+  --mau-chu: #f8fafc;
+  --mau-chinh: #7dd3fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 30px 16px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: var(--mau-nen);
+  color: var(--mau-chu);
+}
+
+header,
+main,
+footer {
+  max-width: 750px;
+  margin: auto;
+}
+
+header {
+  text-align: center;
+}
+
+section {
+  margin: 30px 0;
+  padding: 24px;
+  background: var(--mau-the);
+  border-radius: 12px;
+}
+
+#dong-ho {
+  color: var(--mau-chinh);
+  font-size: clamp(20px, 5vw, 36px);
+  font-weight: bold;
+}
+
+form {
+  display: grid;
+  gap: 12px;
+}
+
+input,
+button {
+  padding: 12px;
+  font: inherit;
+}
+
+button {
+  background: var(--mau-chinh);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:focus-visible {
+  outline: 3px solid var(--mau-chinh);
+  outline-offset: 3px;
+}
+
+footer {
+  text-align: center;
+}
