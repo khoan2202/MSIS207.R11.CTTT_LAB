@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Resilient Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">
+        Skip to main content
+    </a>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Primary navigation">
+            <a href="index.html" class="logo">
+                MyPortfolio
+            </a>
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#data-section">Data</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="section" id="data-section">
+            <header class="section-header">
+                <p class="eyebrow">
+                    EXERCISE 3
+                </p>
+                <h1>
+                    Resilient Data Component
+                </h1>
+                <p>
+                    This component demonstrates loading,
+                    success, empty and error states.
+                </p>
+            </header>
+
+            <section
+                id="loading-state"
+                class="state-container"
+                aria-live="polite"
+                hidden>
+                <h2 class="visually-hidden">
+                    Loading
+                </h2>
+                <ul class="data-list">
+                    <li class="skeleton-item"></li>
+                    <li class="skeleton-item"></li>
+                    <li class="skeleton-item"></li>
+                    <li class="skeleton-item"></li>
+                </ul>
+            </section>
+
+            <section
+                id="success-state"
+                class="state-container"
+                aria-live="polite"
+                hidden>
+                <h2>
+                    Latest Projects
+                </h2>
+                <ul
+                    id="data-list"
+                    class="data-list">
+                </ul>
+            </section>
+
+            <section
+                id="empty-state"
+                class="state-message"
+                aria-live="polite"
+                hidden>
+                <h2>
+                    No projects found
+                </h2>
+                <p>
+                    There is currently no project data available.
+                </p>
+                <button
+                    type="button"
+                    class="button"
+                    id="empty-retry">
+                    Try Again
+                </button>
+            </section>
+
+            <section
+                id="error-state"
+                class="state-message"
+                aria-live="assertive"
+                hidden>
+                <h2>
+                    Something went wrong
+                </h2>
+                <p>
+                    We could not load the project data.
+                    Please try again.
+                </p>
+                <button
+                    type="button"
+                    class="button"
+                    id="error-retry">
+                    Retry
+                </button>
+            </section>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            © 2026 KhacDiChoi.
+        </p>
+    </footer>
+    <script src="resilient.js"></script>
+</body>
+</html>
