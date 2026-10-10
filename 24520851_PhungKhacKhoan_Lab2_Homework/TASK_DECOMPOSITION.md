@@ -24,16 +24,16 @@ Mỗi task: viết code → kiểm tra → commit.
 đã test xong homework 2
 
 ## Homework 3: Flash Sale — tối thiểu 8 commit
-- [ ] Commit 1: Khai báo contract
-- [ ] Commit 2: Viết countdown theo deadline
-- [ ] Commit 3: Viết inventory lock và expiry
-- [ ] Commit 4: Viết reserve request
-- [ ] Commit 5: Viết checkout và cancel
-- [ ] Commit 6: Tích hợp giao diện
-- [ ] Commit 7: Kiểm tra concurrency và invariant
-- [ ] Commit 8: Hoàn thành AI_FAILURE_AUDIT
+- [x] Commit 1: Khai báo contract
+- [x] Commit 2: Viết countdown theo deadline
+- [x] Commit 3: Viết inventory lock và expiry
+- [x] Commit 4: Viết reserve request
+- [x] Commit 5: Viết checkout và cancel
+- [x] Commit 6: Tích hợp giao diện
+- [x] Commit 7: Kiểm tra concurrency và invariant
+- [x] Commit 8: Hoàn thành AI_FAILURE_AUDIT
 
 ## Hoàn tất
-- [ ] Kiểm tra ba Homework
-- [ ] Bổ sung screenshot và báo cáo thật
-- [ ] Push GitHub
+- [x] Kiểm tra ba Homework
+- [x] Bổ sung screenshot và báo cáo thật
+- [x] Push GitHub
