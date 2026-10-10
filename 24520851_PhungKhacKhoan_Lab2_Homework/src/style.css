@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #eef2f7;
+  color: #172033;
+  font: 16px/1.6 system-ui, sans-serif;
+}
+
+main {
+  max-width: 1050px;
+  margin: 24px auto;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+button,
+input {
+  font: inherit;
+  padding: 10px 14px;
+}
+
+button {
+  min-height: 44px;
+  margin: 4px;
+  border: 2px solid #194caa;
+  border-radius: 6px;
+  background: #194caa;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #515b69;
+  border-color: #515b69;
+  cursor: default;
+}
+
+input {
+  border: 1px solid #58657a;
+  border-radius: 6px;
+}
+
+:focus-visible {
+  outline: 3px solid #832d00;
+  outline-offset: 3px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #62718a;
+  text-align: left;
+}
+
+tr[aria-selected="true"] {
+  background: #dbe8ff;
+}
+
+@media (max-width: 700px) {
+  main {
+    margin: 10px;
+    padding: 16px;
+  }
+}

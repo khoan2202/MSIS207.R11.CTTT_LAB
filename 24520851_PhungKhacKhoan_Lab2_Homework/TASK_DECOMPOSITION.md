@@ -3,16 +3,16 @@
 Mỗi task: viết code → kiểm tra → commit.
 
 ## Chuẩn bị
-- [ ] Khởi tạo cấu trúc và quy tắc Homework
-- [ ] Cấu hình Vite và TypeScript
+- [x] Khởi tạo cấu trúc và quy tắc Homework
+- [x] Cấu hình Vite và TypeScript
 
 ## Homework 1: Data Grid
-- [ ] Khai báo contract cột và dữ liệu
-- [ ] Viết lọc, sắp xếp và phân trang
-- [ ] Tạo bảng semantic và ARIA
-- [ ] Viết điều hướng bàn phím và quản lý focus
-- [ ] Tích hợp giao diện
-- [ ] Chạy Lighthouse và lưu bằng chứng
+- [x] Khai báo contract cột và dữ liệu
+- [x] Viết lọc, sắp xếp và phân trang
+- [x] Tạo bảng semantic và ARIA
+- [x] Viết điều hướng bàn phím và quản lý focus
+- [x] Tích hợp giao diện
+- [] Chạy Lighthouse và lưu bằng chứng
 
 ## Homework 2: FIFO Audio
 - [ ] Khai báo contract và thêm audio demo
