@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #eef2f7;
+  color: #172033;
+  font: 16px/1.6 system-ui, sans-serif;
+}
+
+main,
+.exercise-navigation {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+}
+
+.exercise-navigation {
+  display: flex;
+  gap: 20px;
+}
+
+a {
+  color: #1444a3;
+}
+
+section {
+  margin-top: 16px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+button,
+input {
+  font: inherit;
+  padding: 10px 14px;
+}
+
+input {
+  border: 1px solid #58657a;
+  border-radius: 6px;
+}
+
+button {
+  margin: 4px;
+  border: 2px solid #194caa;
+  border-radius: 6px;
+  background: #194caa;
+  color: white;
+  cursor: pointer;
+}
+
+button[aria-pressed="true"] {
+  background: #183427;
+  border-color: #183427;
+}
+
+:focus-visible {
+  outline: 3px solid #832d00;
+  outline-offset: 3px;
+}
+
+#task-list {
+  padding-left: 24px;
+}
+
+#task-list li {
+  margin: 12px 0;
+}
+
+#task-list li > span {
+  display: inline-block;
+  min-width: 220px;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+@media (max-width: 600px) {
+  main,
+  .exercise-navigation {
+    margin: 10px;
+    padding: 16px;
+  }
+
+  #task-list li > span {
+    display: block;
+  }
+}
