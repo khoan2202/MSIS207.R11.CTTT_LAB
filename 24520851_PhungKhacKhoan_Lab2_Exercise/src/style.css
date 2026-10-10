@@ -97,3 +97,44 @@ button[aria-pressed="true"] {
     display: block;
   }
 }
+.load-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 16px 0;
+}
+
+.skeleton {
+  height: 32px;
+  margin: 12px 0;
+  border-radius: 6px;
+  background: #bec9d9;
+  animation: skeleton-pulse 1s ease-in-out infinite alternate;
+}
+
+.error {
+  color: #922525;
+  font-weight: 600;
+}
+
+button:disabled {
+  background: #515b69;
+  border-color: #515b69;
+  cursor: default;
+}
+
+@keyframes skeleton-pulse {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}

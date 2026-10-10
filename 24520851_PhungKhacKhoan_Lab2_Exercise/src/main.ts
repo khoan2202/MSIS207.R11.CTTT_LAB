@@ -6,6 +6,7 @@ import { setupEventDelegation } from "./core/events.ts";
 
 import { mountExercise1 } from "./exercise/ex1.ts";
 import { mountExercise2 } from "./exercise/ex2.ts";
+import { mountExercise3 } from "./exercise/ex3.ts";
 
 const root = document.getElementById("app");
 
@@ -23,21 +24,24 @@ const navigation = renderToDOM(
 
     h("a", { href: "?ex=1" }, "Exercise 1"),
     h("a", { href: "?ex=2" }, "Exercise 2"),
+    h("a", { href: "?ex=3" }, "Exercise 3"),
   ),
 );
 
 root.before(navigation);
 
 const selected =
-  new URL(window.location.href).searchParams.get("ex") ?? "2";
+  new URL(window.location.href).searchParams.get("ex") ?? "3";
 
 let cleanupApp: () => void;
 
 if (selected === "1") {
   mountExercise1(root);
   cleanupApp = setupEventDelegation(root);
-} else {
+} else if (selected === "2") {
   cleanupApp = mountExercise2(root);
+} else {
+  cleanupApp = mountExercise3(root);
 }
 
 function dispose(): void {
