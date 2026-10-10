@@ -12,7 +12,7 @@ Mỗi task: viết code → kiểm tra → commit.
 - [x] Tạo bảng semantic và ARIA
 - [x] Viết điều hướng bàn phím và quản lý focus
 - [x] Tích hợp giao diện
-- [] Chạy Lighthouse và lưu bằng chứng
+- [x] Chạy Lighthouse và lưu bằng chứng
 
 ## Homework 2: FIFO Audio
 - [ ] Khai báo contract và thêm audio demo
