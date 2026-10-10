@@ -3,14 +3,14 @@
 Mỗi task: viết code → kiểm tra → commit.
 
 ## Chuẩn bị
-- [ ] Khởi tạo cấu trúc và quy tắc Exercise
-- [ ] Cấu hình Vite và TypeScript
+- [v] Khởi tạo cấu trúc và quy tắc Exercise
+- [v] Cấu hình Vite và TypeScript
 
 ## Exercise 1: Mini React
-- [ ] Khai báo contract VNode
-- [ ] Viết createTextElement và createElement
-- [ ] Viết renderToDOM
-- [ ] Tạo giao diện semantic và kiểm tra XSS
+- [v] Khai báo contract VNode
+- [v] Viết createTextElement và createElement
+- [v] Viết renderToDOM
+- [v] Tạo giao diện semantic và kiểm tra XSS
 
 ## Exercise 2: State và Task Manager
 - [ ] Viết stateStore và resetCursor
