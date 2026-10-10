@@ -21,12 +21,12 @@ Mỗi task: viết code → kiểm tra → commit.
 - [x] Kiểm tra focus, ID và event listeners
 
 ## Exercise 3: Async State Machine
-- [ ] Khai báo IDLE, LOADING, SUCCESS và ERROR
-- [ ] Viết dịch vụ dữ liệu có thể hủy
-- [ ] Tạo skeleton, thông báo lỗi và Retry
-- [ ] Kiểm tra race condition và cancel
+- [x] Khai báo IDLE, LOADING, SUCCESS và ERROR
+- [x] Viết dịch vụ dữ liệu có thể hủy
+- [x] Tạo skeleton, thông báo lỗi và Retry
+- [x] Kiểm tra race condition và cancel
 
 ## Hoàn tất
-- [ ] Kiểm tra ba Exercise
-- [ ] Lưu bằng chứng DevTools
-- [ ] Push GitHub
+- [x] Kiểm tra ba Exercise
+- [x] Lưu bằng chứng DevTools
+- [x] Push GitHub
