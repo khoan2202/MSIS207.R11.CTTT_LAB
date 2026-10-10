@@ -21,6 +21,7 @@ Mỗi task: viết code → kiểm tra → commit.
 - [x] Viết cancel bằng AbortController
 - [x] Viết FFT Canvas visualizer
 - [x] Tích hợp giao diện và kiểm tra cleanup
+đã test xong homework 2
 
 ## Homework 3: Flash Sale — tối thiểu 8 commit
 - [ ] Commit 1: Khai báo contract
