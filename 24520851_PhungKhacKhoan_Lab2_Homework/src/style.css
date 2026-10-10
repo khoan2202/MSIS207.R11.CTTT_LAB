@@ -151,3 +151,50 @@ tr[aria-selected="true"] {
     height: 180px;
   }
 }
+
+.sale-card {
+  padding: 24px;
+  margin: 24px 0;
+  background: #f4f7fc;
+  border: 2px solid #194caa;
+  border-radius: 16px;
+}
+
+.sale-card h2 {
+  margin-top: 0;
+}
+
+.sale-price {
+  color: #a02616;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.sale-failure-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin: 16px 0;
+}
+
+.sale-failure-option input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.sale-order {
+  overflow-wrap: anywhere;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .sale-card {
+    padding: 16px;
+  }
+
+  .sale-price {
+    font-size: 1.6rem;
+  }
+}

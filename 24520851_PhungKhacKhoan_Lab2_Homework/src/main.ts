@@ -3,6 +3,7 @@ import { el } from "./core/dom";
 import { setupEventDelegation } from "./core/events";
 import { mountHomework1 } from "./homework/hw1";
 import { mountHomework2 } from "./homework/hw2";
+import { mountHomework3 } from "./homework/hw3";
 
 const root = document.getElementById("root");
 
@@ -10,9 +11,12 @@ if (!root) {
   throw new Error("Không tìm thấy phần tử #root.");
 }
 
+const requested =
+  new URLSearchParams(window.location.search).get("hw");
+
 const selected =
-  new URLSearchParams(window.location.search).get("hw") === "2"
-    ? "2"
+  requested === "2" || requested === "3"
+    ? requested
     : "1";
 
 const navigation = el(
@@ -21,21 +25,16 @@ const navigation = el(
     className: "homework-nav",
     "aria-label": "Chọn bài Homework",
   },
-  el(
-    "a",
-    {
-      href: "?hw=1",
-      "aria-current": selected === "1" ? "page" : undefined,
-    },
-    "Homework 1",
-  ),
-  el(
-    "a",
-    {
-      href: "?hw=2",
-      "aria-current": selected === "2" ? "page" : undefined,
-    },
-    "Homework 2",
+  ...["1", "2", "3"].map((number) =>
+    el(
+      "a",
+      {
+        href: `?hw=${number}`,
+        "aria-current":
+          selected === number ? "page" : undefined,
+      },
+      `Homework ${number}`,
+    ),
   ),
 );
 
@@ -43,10 +42,17 @@ root.before(navigation);
 
 let disposeHomework: () => void = () => {};
 
-if (selected === "2") {
-  disposeHomework = mountHomework2(root);
-} else {
-  mountHomework1(root);
+switch (selected) {
+  case "2":
+    disposeHomework = mountHomework2(root);
+    break;
+
+  case "3":
+    disposeHomework = mountHomework3(root);
+    break;
+
+  default:
+    mountHomework1(root);
 }
 
 const removeDelegation = setupEventDelegation(root);
@@ -69,8 +75,6 @@ function cleanup(): void {
 }
 
 function onPageHide(event: PageTransitionEvent): void {
-  // Nếu vào back-forward cache, khi quay lại sẽ tải lại trang
-  // để không dùng engine/hàng đợi đã dispose.
   if (event.persisted) {
     disposeHomework();
   } else {
