@@ -122,7 +122,7 @@ kbd { border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 
 .sidebar ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.25rem; }
 .sidebar a { display: grid; padding: 0.5rem 0.6rem; border-radius: 6px; text-decoration: none; min-height: 44px; }
 .sidebar a.active-link { background: var(--accent); color: #fff; }
-.dossier-case { font-size: 0.85rem; opacity: 0.85; }
+.dossier-case { font-size: 0.85rem; }
 .dossier-view { display: grid; gap: 1rem; }
 .kv { display: grid; gap: 0.3rem; margin: 0; }
 .kv div { display: grid; grid-template-columns: 11rem 1fr; gap: 0.75rem; }
