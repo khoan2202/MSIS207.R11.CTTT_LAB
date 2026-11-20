@@ -20,7 +20,8 @@ function query(resultFn) {
   return q;
 }
 
-export function createFakeModel({ uniques = [], seed = [] } = {}) {
+// defaults: mô phỏng giá trị default của schema (Mongoose tự điền khi create).
+export function createFakeModel({ uniques = [], seed = [], defaults = {} } = {}) {
   const docs = seed.map((d) => ({ ...d }));
   let tick = 0;
   return {
@@ -37,7 +38,7 @@ export function createFakeModel({ uniques = [], seed = [] } = {}) {
           throw Object.assign(new Error("E11000 duplicate key"), { code: 11000, keyPattern: Object.fromEntries(keys.map((k) => [k, 1])) });
         }
       }
-      const doc = { ...data, createdAt: new Date(Date.UTC(2026, 0, 1, 0, 0, tick++)) };
+      const doc = { _id: `fake${tick}`, ...defaults, ...data, createdAt: new Date(Date.UTC(2026, 0, 1, 0, 0, tick++)) };
       docs.push(doc);
       return { ...doc };
     },
