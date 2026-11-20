@@ -19,11 +19,15 @@ const round2 = (n) => Math.round(n * 100) / 100;
 
 export function computeMatrix(dossier) {
   const current = ratioOf(dossier.penalty.banDays, dossier.offense.severity);
-  const rows = dossier.precedents.map((p) => {
-    const ratio = ratioOf(p.banDays, p.severity);
-    return { ...p, ratio: round2(ratio), delta: round2(current - ratio) };
-  });
-  const baseline = median(rows.map((r) => r.ratio));
+  const rawRatios = dossier.precedents.map((p) => ratioOf(p.banDays, p.severity));
+  const rows = dossier.precedents.map((p, i) => ({
+    ...p,
+    ratio: round2(rawRatios[i]),
+    delta: round2(current - rawRatios[i]),
+  }));
+  // Trung vị tính trên giá trị CHƯA làm tròn; chỉ làm tròn khi hiển thị
+  // (làm tròn trước rồi mới tính sẽ cộng dồn sai số).
+  const baseline = median(rawRatios);
   const index = baseline > 0 ? round2(current / baseline) : null;
   return {
     currentRatio: round2(current),

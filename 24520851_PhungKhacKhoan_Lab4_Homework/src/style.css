@@ -115,3 +115,25 @@ button:disabled { opacity: 0.55; cursor: not-allowed; }
 kbd { border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 4px; padding: 0 0.3rem; background: #fff; font-family: inherit; }
 @media (max-width: 760px) { .swipe-layout { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .card-top { transition: none; } }
+/* HW3 — Tribunal */
+.disclaimer { background: #fff7e6; border: 1px solid #f5c26b; border-radius: 8px; padding: 0.5rem 0.75rem; }
+.dossier-frame { display: grid; grid-template-columns: minmax(220px, 1fr) 3fr; gap: 1rem; align-items: start; }
+.sidebar h2 { margin-top: 0; font-size: 1.05rem; }
+.sidebar ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.25rem; }
+.sidebar a { display: grid; padding: 0.5rem 0.6rem; border-radius: 6px; text-decoration: none; min-height: 44px; }
+.sidebar a.active-link { background: var(--accent); color: #fff; }
+.dossier-case { font-size: 0.85rem; opacity: 0.85; }
+.dossier-view { display: grid; gap: 1rem; }
+.kv { display: grid; gap: 0.3rem; margin: 0; }
+.kv div { display: grid; grid-template-columns: 11rem 1fr; gap: 0.75rem; }
+.kv dt { color: var(--muted); font-weight: 600; }
+.kv dd { margin: 0; }
+.verdict { padding: 0.5rem 0.75rem; border-radius: 6px; font-weight: 500; }
+.verdict.warn { background: #fef3f2; color: var(--danger); }
+.verdict.ok { background: #ecfdf3; color: var(--ok); }
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; }
+th, td { text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--border); }
+thead th { background: #f2f4f7; }
+.current-row { background: #eef4ff; font-weight: 600; }
+@media (max-width: 760px) { .dossier-frame { grid-template-columns: 1fr; } .kv div { grid-template-columns: 1fr; } }
