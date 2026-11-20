@@ -26,7 +26,7 @@ Mỗi task: contract → test → code → kiểm tra → commit.
 - [x] Backend: Dossier/Appeal models, `/api/time`, `/api/dossiers/:playerID`, `/api/appeals`
 - [x] Route `/dossier/:playerID` + ma trận bất tương xứng (derived)
 - [x] Hook `useAppealSlaTimer` không trôi (đồng bộ đồng hồ server + visibilitychange)
-- [ ] Form khiếu nại Context, validate real-time, gửi lên server
+- [x] Form khiếu nại Context, validate real-time, gửi lên server
 
 ## Hoàn tất
 - [ ] AI_FAILURE_AUDIT.md, HUONG_DAN.md, log kiểm chứng

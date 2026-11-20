@@ -5,7 +5,7 @@ import { validateAppeal } from "../../shared/appealRules.js";
 //   GET  /api/time                    -> 200 { now }  (đồng hồ chuẩn cho useAppealSlaTimer)
 //   GET  /api/dossiers                -> 200 tóm tắt các hồ sơ
 //   GET  /api/dossiers/:playerID      -> 200 Dossier | 404
-//   GET  /api/appeals/:playerID       -> 200 Appeal | 404 (chưa nộp)
+//   GET  /api/appeals/:playerID       -> 200 Appeal | 200 null (chưa nộp — không phải lỗi, nên không trả 404)
 //   POST /api/appeals                 -> 201 | 400 sai dữ liệu | 404 không có hồ sơ | 409 đã nộp | 422 quá hạn SLA
 const toDossierDto = ({ _id, createdAt, updatedAt, ...rest }) => ({ playerId: _id, ...rest });
 const toAppealDto = ({ _id, playerId, reason, requestedOutcome, status, createdAt }) => ({
@@ -33,8 +33,8 @@ export function tribunalRoutes({ Dossier, Appeal }, { now = () => Date.now() } =
 
   router.get("/appeals/:playerID", async (req, res) => {
     const appeal = await Appeal.findOne({ playerId: req.params.playerID.toLowerCase() }).lean();
-    if (!appeal) return res.status(404).json({ error: "Chưa có đơn khiếu nại." });
-    res.json(toAppealDto(appeal));
+    // "Chưa nộp" là trạng thái bình thường => 200 + null, tránh lỗi 404 đỏ trong DevTools console.
+    res.json(appeal ? toAppealDto(appeal) : null);
   });
 
   router.post("/appeals", async (req, res) => {

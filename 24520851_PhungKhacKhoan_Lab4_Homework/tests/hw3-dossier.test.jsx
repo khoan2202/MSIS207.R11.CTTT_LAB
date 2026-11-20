@@ -11,7 +11,7 @@ describe("HW3 — /dossier/:playerID", () => {
     const nav = await screen.findByRole("navigation", { name: "Danh sách hồ sơ" });
     await user.click(await within(nav).findByRole("link", { name: /TanVuu/ }));
     expect(screen.getByTestId("loc").textContent).toBe("/dossier/tanvuu");
-    expect(await screen.findByRole("heading", { name: /TanVuu/, level: 2 })).toBeTruthy();
+    expect(await screen.findByRole("heading", { name: /TanVuu — FP-2026-0157/, level: 2 })).toBeTruthy();
   });
 
   it("ma trận derived: Himass có chỉ số 3.65 => cảnh báo bất tương xứng", async () => {

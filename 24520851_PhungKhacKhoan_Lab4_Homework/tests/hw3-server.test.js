@@ -42,6 +42,9 @@ describe("HW3 — Tribunal API", () => {
     expect(first.body.status).toBe("received");
     expect((await request(app).post("/api/appeals").send(appeal())).status).toBe(409);
     expect((await request(app).get("/api/appeals/himass")).body.reason).toBe("technical-issue");
+    const none = await request(app).get("/api/appeals/tanvuu");
+    expect(none.status).toBe(200);
+    expect(none.body).toBeNull();
   });
 
   it("server validate lại bằng luật dùng chung (client bị bypass vẫn bị chặn)", async () => {

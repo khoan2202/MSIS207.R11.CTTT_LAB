@@ -13,7 +13,7 @@ export function installTribunalFetch({ now = Date.now(), appeals = {}, onPost } 
     let m = path.match(/^\/api\/dossiers\/(.+)$/);
     if (m) { const d = dossiers.find((x) => x.playerId === m[1].toLowerCase()); return d ? res(d) : res({ error: "404" }, 404); }
     m = path.match(/^\/api\/appeals\/(.+)$/);
-    if (m) return appeals[m[1]] ? res(appeals[m[1]]) : res({ error: "Chưa có" }, 404);
+    if (m) return res(appeals[m[1]] ?? null);
     if (path === "/api/appeals" && opts.method === "POST") return onPost ? onPost(JSON.parse(opts.body), res) : res({}, 201);
     return res({ error: "?" }, 404);
   });

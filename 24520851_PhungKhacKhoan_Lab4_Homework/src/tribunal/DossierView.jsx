@@ -2,6 +2,8 @@ import { useParams } from "react-router";
 import { useFetchJson } from "../lib/useFetchJson.js";
 import MatrixTable from "./MatrixTable.jsx";
 import SlaCountdown from "./SlaCountdown.jsx";
+import AppealSection from "./AppealForm.jsx";
+import { useAppealSlaTimer } from "./useAppealSlaTimer.js";
 import Skeleton from "../components/Skeleton.jsx";
 import NotFound from "../pages/NotFound.jsx";
 
@@ -12,6 +14,8 @@ const fmt = (iso) => new Date(iso).toLocaleString("vi-VN", { dateStyle: "medium"
 export default function DossierView() {
   const { playerID } = useParams();
   const { data: dossier, error, loading, reload } = useFetchJson(`/api/dossiers/${encodeURIComponent(playerID)}`);
+  // Hook gọi ở đầu component (trước mọi return sớm) — đúng Rules of Hooks.
+  const sla = useAppealSlaTimer(dossier?.appealDeadline ?? null);
 
   if (loading) return <Skeleton lines={6} minHeight={420} label="Đang tải hồ sơ…" />;
   if (error?.status === 404) return <NotFound message={`Không có hồ sơ cho người chơi "${playerID}".`} />;
@@ -43,8 +47,10 @@ export default function DossierView() {
           {dossier.evidence.map((e) => <li key={e.label}><strong>{e.label}:</strong> {e.note}</li>)}
         </ul>
       </article>
-      <SlaCountdown deadline={dossier.appealDeadline} />
+      <SlaCountdown sla={sla} />
       <MatrixTable dossier={dossier} />
+      {/* key: đổi người chơi => form mới hoàn toàn, không dính dữ liệu người trước */}
+      <AppealSection key={dossier.playerId} playerId={dossier.playerId} displayName={dossier.displayName} expired={sla.expired} />
     </div>
   );
 }
