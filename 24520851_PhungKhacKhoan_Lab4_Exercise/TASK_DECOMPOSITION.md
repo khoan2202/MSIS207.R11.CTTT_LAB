@@ -7,7 +7,7 @@ Mỗi task: contract → test → code → kiểm tra → commit.
 - [x] Viết project-rules.md, TASK_DECOMPOSITION.md, .env.example
 
 ## Sprint 1 — Router v7 & Master-Detail
-- [ ] Ex 1.2 & 1.2.1: `<Routes>`, `element`, Layout + `<Outlet />`, NavLink `isActive`
+- [x] Ex 1.2 & 1.2.1: `<Routes>`, `element`, Layout + `<Outlet />`, NavLink `isActive`
 - [ ] Ex 1.1: `React.lazy` + `<Suspense>` + Skeleton (aria-busy, aria-live)
 - [ ] Ex 1.2.2: PeopleLayout + PersonDetail (`useParams`, 404, `<dl>`, CSS Grid)
 
