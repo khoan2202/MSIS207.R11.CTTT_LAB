@@ -4,6 +4,9 @@ import Layout from "./components/Layout.jsx";
 import Skeleton from "./components/Skeleton.jsx";
 import Home from "./pages/Home.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import PeopleLayout from "./people/PeopleLayout.jsx";
+import PeopleIndex from "./people/PeopleIndex.jsx";
+import { PEOPLE } from "./data/people.js";
 
 // Ex 1.1 — Code-splitting theo route:
 // import() động khiến Vite tách About.jsx ra một chunk JS riêng,
@@ -28,6 +31,10 @@ export default function App() {
             </Suspense>
           }
         />
+        {/* Ex 1.2.2 — Route lồng 2 cấp: /people (layout) -> index */}
+        <Route path="people" element={<PeopleLayout people={PEOPLE} />}>
+          <Route index element={<PeopleIndex />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

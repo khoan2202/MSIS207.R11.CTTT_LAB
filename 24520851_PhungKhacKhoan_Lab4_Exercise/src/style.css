@@ -24,3 +24,13 @@ button:disabled { opacity: 0.55; cursor: not-allowed; }
 .skeleton-title { height: 1.4rem; width: 45%; }
 @keyframes shimmer { to { background-position: -200% 0; } }
 @media (prefers-reduced-motion: reduce) { .skeleton-line { animation: none; } }
+/* Ex 1.2.2 — Master-Detail bằng CSS Grid: cột trái tối thiểu 280px, cột phải gấp đôi */
+.people-frame { display: grid; grid-template-columns: minmax(280px, 1fr) 2fr; gap: 1rem; align-items: start; }
+.sidebar h2 { margin-top: 0; font-size: 1.05rem; }
+.sidebar ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.25rem; }
+.sidebar a { display: block; padding: 0.45rem 0.6rem; border-radius: 6px; text-decoration: none; }
+.sidebar a.active-link { background: var(--accent); color: #fff; }
+.person-details { display: grid; grid-template-columns: max-content 1fr; gap: 0.4rem 1rem; margin: 0; }
+.person-details dt { font-weight: 600; color: var(--muted); }
+.person-details dd { margin: 0; }
+@media (max-width: 720px) { .people-frame { grid-template-columns: 1fr; } }

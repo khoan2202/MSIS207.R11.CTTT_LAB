@@ -4,6 +4,7 @@ import { NavLink, Outlet } from "react-router";
 // <Outlet /> là "lỗ trống" nơi React Router chèn route con đang khớp URL.
 const NAV_ITEMS = [
   { to: "/", label: "Trang chủ", end: true },
+  { to: "/people", label: "Nhân sự (Sprint 1)" },
   { to: "/about", label: "Giới thiệu" },
 ];
 
