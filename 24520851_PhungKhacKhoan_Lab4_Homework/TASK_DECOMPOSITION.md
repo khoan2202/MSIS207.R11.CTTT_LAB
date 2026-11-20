@@ -19,7 +19,7 @@ Mỗi task: contract → test → code → kiểm tra → commit.
 - [x] Logic thuần: LIFO undo stack + điểm bất đối xứng (derived)
 - [x] Backend: Mongoose 8 models + Express GET/POST/DELETE
 - [x] Hook dữ liệu + persistence có AbortController
-- [ ] Giao diện swipe: bàn phím ←/→/↑/Backspace + pointer kéo thả
+- [x] Giao diện swipe: bàn phím ←/→/↑/Backspace + pointer kéo thả
 
 ## HW3 — Full-Stack Esports Fair-Play Appeal Tribunal
 - [ ] Contract + luật validate dùng chung client/server

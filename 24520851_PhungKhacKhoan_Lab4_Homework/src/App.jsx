@@ -7,6 +7,7 @@ import Skeleton from "./components/Skeleton.jsx";
 
 // Mỗi homework là một chunk riêng (code-splitting theo route).
 const GalleryPage = lazy(() => import("./gallery/GalleryPage.jsx"));
+const SwipePage = lazy(() => import("./swipe/SwipePage.jsx"));
 
 export default function App() {
   return (
@@ -18,6 +19,14 @@ export default function App() {
           element={
             <Suspense fallback={<Skeleton lines={6} minHeight={600} />}>
               <GalleryPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="swipe"
+          element={
+            <Suspense fallback={<Skeleton lines={5} minHeight={460} />}>
+              <SwipePage />
             </Suspense>
           }
         />

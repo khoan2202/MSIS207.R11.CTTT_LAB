@@ -24,3 +24,19 @@ mở ảnh rồi bấm Back                 -> dialog đóng, URL ?category=city
 bấm Forward                         -> dialog mở lại đúng ảnh
 console error/warning               -> không có
 ```
+
+## HW2 — Swipe Deck trên Chrome (Playwright)
+Môi trường sandbox **không có MongoDB** (không tải được mongod), nên e2e chạy `createApp()` thật
+với model giả trong bộ nhớ (`tests/fake-models.js`). Kết nối MongoDB thật cần kiểm tra lại trên máy
+cá nhân theo `HUONG_DAN.md` (mục HW2 → Chạy với MongoDB).
+```
+→ ← ↑                  -> Điểm: 30   (+10 -5 +25)
+Backspace              -> Điểm: 5    (hoàn tác lượt +25 cuối cùng — LIFO)
+kéo chuột sang phải    -> Điểm: 15   (+10)
+F5 (reload)            -> lá trên cùng vẫn "Khang, 26", Điểm: 15 (khôi phục phiên từ API)
+console error/warning  -> không có
+```
+Screenshot: `screenshots/hw2-drag.png` (đang kéo), `screenshots/hw2-deck.png`.
+
+Lỗi phát hiện nhờ screenshot (test jsdom không bắt được): lá bài trên cùng bị trong suốt do
+`{...rest}` ghi đè `style` chứa `--hue` → đã sửa + thêm test hồi quy (AI_FAILURE_AUDIT #HW2-1).
