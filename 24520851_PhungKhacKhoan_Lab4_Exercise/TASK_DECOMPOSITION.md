@@ -29,4 +29,4 @@ Mỗi task: contract → test → code → kiểm tra → commit.
 - [x] Protected Route Guard
 
 ## Hoàn tất
-- [ ] AI_FAILURE_AUDIT.md + HUONG_DAN.md + log kiểm thử
+- [x] AI_FAILURE_AUDIT.md + HUONG_DAN.md + log kiểm thử
