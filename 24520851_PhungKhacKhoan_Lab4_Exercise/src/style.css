@@ -42,3 +42,7 @@ button:disabled { opacity: 0.55; cursor: not-allowed; }
 .field-error, .form-summary { color: var(--danger); font-weight: 500; }
 .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; align-items: start; }
 .counter-row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.json-inspector { margin: 0; display: grid; gap: 0.35rem; }
+.json-inspector .data-row { display: grid; grid-template-columns: 9rem 1fr; gap: 0.75rem; padding: 0.35rem 0.5rem; background: #f2f4f7; border-radius: 6px; }
+.json-inspector dt { font-family: ui-monospace, monospace; color: var(--muted); }
+.json-inspector dd { margin: 0; font-family: ui-monospace, monospace; word-break: break-word; }

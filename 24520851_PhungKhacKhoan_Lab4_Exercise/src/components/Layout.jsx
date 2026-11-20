@@ -5,6 +5,7 @@ import { NavLink, Outlet } from "react-router";
 const NAV_ITEMS = [
   { to: "/", label: "Trang chủ", end: true },
   { to: "/people", label: "Nhân sự (Sprint 1)" },
+  { to: "/form", label: "Form (Sprint 2)" },
   { to: "/about", label: "Giới thiệu" },
 ];
 

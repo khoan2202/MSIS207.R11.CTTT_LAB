@@ -13,6 +13,7 @@ import { PEOPLE } from "./data/people.js";
 // chỉ tải khi người dùng thật sự vào /about.
 const About = lazy(() => import("./pages/About.jsx"));
 const PersonDetail = lazy(() => import("./people/PersonDetail.jsx"));
+const FormPage = lazy(() => import("./pages/FormPage.jsx"));
 
 // Ex 1.2 — Cú pháp khai báo React Router v7:
 // - <Routes> thay cho <Switch> (thuật toán khớp theo độ cụ thể, không cần "exact").
@@ -46,6 +47,14 @@ export default function App() {
             }
           />
         </Route>
+        <Route
+          path="form"
+          element={
+            <Suspense fallback={<Skeleton lines={6} minHeight={420} />}>
+              <FormPage />
+            </Suspense>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

@@ -15,7 +15,7 @@ Mỗi task: contract → test → code → kiểm tra → commit.
 - [x] Ex 1.3: Phân tích anti-pattern 5 useEffect + demo đếm render
 - [x] FormContext + validateForm đồng bộ (feat: form context)
 - [x] InputField với useId, aria-invalid, aria-describedby (feat: input field validation)
-- [ ] ShowData inspector khi submit hợp lệ (feat: inspector output)
+- [x] ShowData inspector khi submit hợp lệ (feat: inspector output)
 
 ## Sprint 3 — Full-stack
 - [ ] Express API: CORS, GET/POST `/api/messages/:forum`, validate payload

@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import { FormContext } from "./FormContext.js";
 import { InputField } from "./InputField.jsx";
 import { validateForm, INITIAL_VALUES } from "./validateForm.js";
 
 // Sprint 2 contract — SimpleForm: "động cơ" form dựa trên Context, KHÔNG có useEffect.
-export function SimpleForm({ onValidSubmit = () => {} }) {
+export function SimpleForm({ onValidSubmit = () => {}, title = "Form mới (Context + derived state)" }) {
+  // useId cho tiêu đề: trang /form render 2 SimpleForm, id cố định sẽ bị trùng.
+  const titleId = useId();
   // State tối thiểu: chỉ những gì người dùng nhập / thao tác.
   const [values, setValues] = useState(INITIAL_VALUES);
   const [touched, setTouched] = useState({});
@@ -45,8 +47,8 @@ export function SimpleForm({ onValidSubmit = () => {} }) {
 
   return (
     <FormContext.Provider value={{ values, errors, visibleErrors, isValid, handleChange, handleBlur }}>
-      <form className="card form-engine" noValidate onSubmit={handleSubmit} aria-labelledby="form-title">
-        <h3 id="form-title">Form mới (Context + derived state)</h3>
+      <form className="card form-engine" noValidate onSubmit={handleSubmit} aria-labelledby={titleId}>
+        <h3 id={titleId}>{title}</h3>
         {submitAttempted && errorCount > 0 && (
           <p role="alert" className="form-summary">Còn {errorCount} trường cần sửa.</p>
         )}
