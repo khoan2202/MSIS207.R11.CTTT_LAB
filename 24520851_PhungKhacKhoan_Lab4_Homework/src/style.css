@@ -64,3 +64,14 @@ button:disabled { opacity: 0.55; cursor: not-allowed; }
 .field-group [aria-invalid="true"] { border-color: var(--danger); border-width: 2px; }
 .field-hint { color: var(--muted); }
 .field-error, .form-summary { color: var(--danger); font-weight: 500; }
+/* HW1 — Gallery */
+.filter-bar ul { list-style: none; padding: 0; margin: 0 0 0.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.chip { display: inline-block; min-height: 44px; padding: 0.6rem 1rem; border: 1px solid var(--accent); border-radius: 999px; text-decoration: none; font-weight: 500; }
+.chip[aria-current="page"] { background: var(--accent); color: #fff; }
+.result-count { color: var(--muted); margin: 0.25rem 0 0.75rem; }
+.photo-grid { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.photo-grid figure { margin: 0; }
+.photo-grid img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; border-radius: 8px; background: #e4e7ec; }
+.photo-grid figcaption { padding: 0.35rem 0.1rem; font-weight: 500; }
+.thumb-button { display: block; width: 100%; padding: 0; border: 0; background: none; color: inherit; text-align: left; cursor: zoom-in; border-radius: 10px; }
+.thumb-button:hover img { filter: brightness(1.05); box-shadow: 0 4px 14px rgb(0 0 0 / 0.18); }
