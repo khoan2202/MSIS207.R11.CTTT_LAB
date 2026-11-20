@@ -18,7 +18,7 @@ Mỗi task: contract → test → code → kiểm tra → commit.
 - [x] ShowData inspector khi submit hợp lệ (feat: inspector output)
 
 ## Sprint 3 — Full-stack
-- [ ] Express API: CORS, GET/POST `/api/messages/:forum`, validate payload
+- [x] Express API: CORS, GET/POST `/api/messages/:forum`, validate payload
 - [ ] Hook `useForumMessages` với AbortController
 - [ ] Trang đổi kênh `nasa`, `esports-tribunal`, `notNasa`
 

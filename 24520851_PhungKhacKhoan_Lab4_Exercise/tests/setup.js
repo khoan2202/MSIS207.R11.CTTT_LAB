@@ -5,4 +5,4 @@ import { cleanup } from "@testing-library/react";
 afterEach(() => cleanup());
 
 // jsdom chưa cài scrollIntoView — giả lập để code UI chạy được trong test.
-if (!Element.prototype.scrollIntoView) Element.prototype.scrollIntoView = () => {};
+if (typeof Element !== "undefined" && !Element.prototype.scrollIntoView) Element.prototype.scrollIntoView = () => {};
