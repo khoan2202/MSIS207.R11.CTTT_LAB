@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { randomUUID } from "node:crypto";
+import { validateMessagePayload } from "../shared/messageRules.js";
 
 // Sprint 3 contract — Express REST API
 //   GET  /api/forums               -> 200 string[]
@@ -8,19 +9,8 @@ import { randomUUID } from "node:crypto";
 //   POST /api/messages/:forum      -> 201 Message   | 400 { error, fields } | 404 { error }
 // Message = { id, forum, author, text, timestamp }
 
-const LIMITS = { author: 40, text: 500 };
-
-// Validate payload ở server (không tin client). Trả về object lỗi theo field.
-export function validateMessagePayload(body) {
-  const errors = {};
-  if (body === null || typeof body !== "object") return { body: "Payload phải là JSON object." };
-  for (const field of ["author", "text"]) {
-    const value = body[field];
-    if (typeof value !== "string" || !value.trim()) errors[field] = `Thiếu trường ${field}.`;
-    else if (value.trim().length > LIMITS[field]) errors[field] = `${field} tối đa ${LIMITS[field]} ký tự.`;
-  }
-  return errors;
-}
+// Dùng chung luật validate với client (xem shared/messageRules.js).
+export { validateMessagePayload };
 
 // Chờ ms mili-giây nhưng dừng sớm nếu client đã ngắt kết nối (AbortController phía client).
 function wait(ms, req) {

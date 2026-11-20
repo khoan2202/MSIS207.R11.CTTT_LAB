@@ -14,6 +14,7 @@ import { PEOPLE } from "./data/people.js";
 const About = lazy(() => import("./pages/About.jsx"));
 const PersonDetail = lazy(() => import("./people/PersonDetail.jsx"));
 const FormPage = lazy(() => import("./pages/FormPage.jsx"));
+const ForumPage = lazy(() => import("./forum/ForumPage.jsx"));
 
 // Ex 1.2 — Cú pháp khai báo React Router v7:
 // - <Routes> thay cho <Switch> (thuật toán khớp theo độ cụ thể, không cần "exact").
@@ -55,6 +56,18 @@ export default function App() {
             </Suspense>
           }
         />
+        {/* Sprint 3 — /forum và /forum/:channel dùng chung một component */}
+        {["forum", "forum/:channel"].map((path) => (
+          <Route
+            key={path}
+            path={path}
+            element={
+              <Suspense fallback={<Skeleton lines={4} minHeight={300} />}>
+                <ForumPage />
+              </Suspense>
+            }
+          />
+        ))}
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

@@ -20,7 +20,7 @@ Mỗi task: contract → test → code → kiểm tra → commit.
 ## Sprint 3 — Full-stack
 - [x] Express API: CORS, GET/POST `/api/messages/:forum`, validate payload
 - [x] Hook `useForumMessages` với AbortController
-- [ ] Trang đổi kênh `nasa`, `esports-tribunal`, `notNasa`
+- [x] Trang đổi kênh `nasa`, `esports-tribunal`, `notNasa`
 
 ## Live Defense Challenge Bank
 - [ ] URL Search Params Sync
