@@ -16,7 +16,7 @@ Mỗi task: contract → test → code → kiểm tra → commit.
 - [x] Kiểm tra Lighthouse + accessibility
 
 ## HW2 — Full-Stack Card-Swipe Deck ("Hẹn Hò Nhưng Không Yêu")
-- [ ] Logic thuần: LIFO undo stack + điểm bất đối xứng (derived)
+- [x] Logic thuần: LIFO undo stack + điểm bất đối xứng (derived)
 - [ ] Backend: Mongoose 8 models + Express GET/POST/DELETE
 - [ ] Hook dữ liệu + persistence có AbortController
 - [ ] Giao diện swipe: bàn phím ←/→/↑/Backspace + pointer kéo thả
