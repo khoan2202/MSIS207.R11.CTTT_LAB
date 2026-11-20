@@ -29,4 +29,4 @@ Mỗi task: contract → test → code → kiểm tra → commit.
 - [x] Form khiếu nại Context, validate real-time, gửi lên server
 
 ## Hoàn tất
-- [ ] AI_FAILURE_AUDIT.md, HUONG_DAN.md, log kiểm chứng
+- [x] AI_FAILURE_AUDIT.md, HUONG_DAN.md, log kiểm chứng
