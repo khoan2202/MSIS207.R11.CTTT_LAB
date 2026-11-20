@@ -13,7 +13,7 @@ Mỗi task: contract → test → code → kiểm tra → commit.
 
 ## Sprint 2 — Context Form Engine
 - [x] Ex 1.3: Phân tích anti-pattern 5 useEffect + demo đếm render
-- [ ] FormContext + validateForm đồng bộ (feat: form context)
+- [x] FormContext + validateForm đồng bộ (feat: form context)
 - [ ] InputField với useId, aria-invalid, aria-describedby (feat: input field validation)
 - [ ] ShowData inspector khi submit hợp lệ (feat: inspector output)
 
