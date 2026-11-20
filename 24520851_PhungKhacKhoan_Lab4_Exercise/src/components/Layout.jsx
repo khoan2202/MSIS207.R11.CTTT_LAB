@@ -7,6 +7,7 @@ const NAV_ITEMS = [
   { to: "/people", label: "Nhân sự (Sprint 1)" },
   { to: "/form", label: "Form (Sprint 2)" },
   { to: "/forum", label: "Forum (Sprint 3)" },
+  { to: "/admin", label: "Admin (bảo vệ)" },
   { to: "/about", label: "Giới thiệu" },
 ];
 

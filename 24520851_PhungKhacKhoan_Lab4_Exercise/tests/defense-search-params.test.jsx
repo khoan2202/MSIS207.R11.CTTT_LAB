@@ -1,7 +1,7 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { MemoryRouter, useLocation } from "react-router";
-import App from "../src/App.jsx";
+import { useLocation } from "react-router";
+import { renderApp } from "./render-app.jsx";
 
 function LocationProbe() {
   const loc = useLocation();
@@ -9,7 +9,7 @@ function LocationProbe() {
 }
 
 const setup = (path) =>
-  render(<MemoryRouter initialEntries={[path]}><App /><LocationProbe /></MemoryRouter>);
+  renderApp(path, { extra: <LocationProbe /> });
 
 describe("Live Defense #1 — useSearchParams", () => {
   it("đọc bộ lọc từ URL khi tải trang (deep link)", () => {

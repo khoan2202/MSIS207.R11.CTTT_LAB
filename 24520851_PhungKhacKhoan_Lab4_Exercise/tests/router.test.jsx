@@ -1,13 +1,8 @@
-import { render, screen } from "@testing-library/react";
-import { MemoryRouter } from "react-router";
-import App from "../src/App.jsx";
+import { screen } from "@testing-library/react";
+import { renderApp } from "./render-app.jsx";
 
 const renderAt = (path) =>
-  render(
-    <MemoryRouter initialEntries={[path]}>
-      <App />
-    </MemoryRouter>,
-  );
+  renderApp(path);
 
 describe("Ex 1.2 — Router v7 layout", () => {
   it("hiển thị Home ở route index và đánh dấu NavLink active", async () => {

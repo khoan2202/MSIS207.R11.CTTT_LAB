@@ -1,7 +1,6 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { MemoryRouter } from "react-router";
-import App from "../src/App.jsx";
+import { renderApp } from "./render-app.jsx";
 
 const ok = (body, status = 200) => Promise.resolve({ ok: status < 400, status, json: async () => body });
 
@@ -11,7 +10,7 @@ describe("Sprint 3 — Channel switcher", () => {
       ok([{ id: url.includes("notNasa") ? "n1" : "a1", author: "bot", text: url.split("/").pop(), timestamp: "2026-11-01T08:00:00Z" }]),
     );
     const user = userEvent.setup();
-    render(<MemoryRouter initialEntries={["/forum/nasa"]}><App /></MemoryRouter>);
+    renderApp("/forum/nasa");
     expect(await screen.findByText("nasa", { selector: "dd" })).toBeTruthy();
     await user.click(screen.getByRole("link", { name: "#notNasa" }));
     expect(await screen.findByText("notNasa", { selector: "dd" })).toBeTruthy();
@@ -20,7 +19,7 @@ describe("Sprint 3 — Channel switcher", () => {
   it("client chặn gửi khi thiếu nội dung (cùng luật với server)", async () => {
     globalThis.fetch = vi.fn(() => ok([]));
     const user = userEvent.setup();
-    render(<MemoryRouter initialEntries={["/forum/nasa"]}><App /></MemoryRouter>);
+    renderApp("/forum/nasa");
     await screen.findByText("Chưa có tin nhắn.");
     await user.click(screen.getByRole("button", { name: "Gửi" }));
     expect(screen.getByText("Thiếu trường text.")).toBeTruthy();
@@ -28,7 +27,7 @@ describe("Sprint 3 — Channel switcher", () => {
   });
 
   it("kênh lạ => 404", async () => {
-    render(<MemoryRouter initialEntries={["/forum/mars"]}><App /></MemoryRouter>);
+    renderApp("/forum/mars");
     expect((await screen.findByRole("alert")).textContent).toContain("mars");
   });
 });

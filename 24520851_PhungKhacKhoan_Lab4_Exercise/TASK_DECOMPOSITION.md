@@ -26,7 +26,7 @@ Mỗi task: contract → test → code → kiểm tra → commit.
 - [x] URL Search Params Sync
 - [x] Cross-Field Validation
 - [x] Auto-Retry Backoff
-- [ ] Protected Route Guard
+- [x] Protected Route Guard
 
 ## Hoàn tất
 - [ ] AI_FAILURE_AUDIT.md + HUONG_DAN.md + log kiểm thử

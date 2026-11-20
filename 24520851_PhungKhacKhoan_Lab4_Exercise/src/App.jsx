@@ -7,6 +7,9 @@ import NotFound from "./pages/NotFound.jsx";
 import PeopleLayout from "./people/PeopleLayout.jsx";
 import PeopleIndex from "./people/PeopleIndex.jsx";
 import { PEOPLE } from "./data/people.js";
+import RequireAuth from "./auth/RequireAuth.jsx";
+import LoginPage from "./auth/LoginPage.jsx";
+import AdminPage from "./pages/AdminPage.jsx";
 
 // Ex 1.1 — Code-splitting theo route:
 // import() động khiến Vite tách About.jsx ra một chunk JS riêng,
@@ -68,6 +71,11 @@ export default function App() {
             }
           />
         ))}
+        {/* Live Defense #4 — Protected Route: mọi route con của RequireAuth đều được bảo vệ */}
+        <Route path="login" element={<LoginPage />} />
+        <Route element={<RequireAuth />}>
+          <Route path="admin" element={<AdminPage />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

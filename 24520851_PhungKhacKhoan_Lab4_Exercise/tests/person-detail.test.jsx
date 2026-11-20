@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router";
 import PersonDetail from "../src/people/PersonDetail.jsx";
-import App from "../src/App.jsx";
+import { renderApp } from "./render-app.jsx";
 import { PEOPLE } from "../src/data/people.js";
 
 const renderDetail = (path) =>
@@ -28,7 +28,7 @@ describe("Sprint 1 — PersonDetail", () => {
   });
 
   it("qua App: lazy chunk tải xong và NavLink tương ứng active", async () => {
-    render(<MemoryRouter initialEntries={["/people/p03"]}><App /></MemoryRouter>);
+    renderApp("/people/p03");
     expect(await screen.findByRole("heading", { name: "Lê Chi" })).toBeTruthy();
     expect(screen.getByRole("link", { name: "Lê Chi" }).className).toBe("active-link");
   });

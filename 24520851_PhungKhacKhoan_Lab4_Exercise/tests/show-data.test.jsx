@@ -1,7 +1,6 @@
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { MemoryRouter } from "react-router";
-import App from "../src/App.jsx";
+import { renderApp } from "./render-app.jsx";
 import { ShowData } from "../src/form/ShowData.jsx";
 
 describe("Sprint 2 — ShowData inspector", () => {
@@ -14,7 +13,7 @@ describe("Sprint 2 — ShowData inspector", () => {
 
   it("submit hợp lệ trên trang /form => inspector hiện dữ liệu", async () => {
     const user = userEvent.setup();
-    render(<MemoryRouter initialEntries={["/form"]}><App /></MemoryRouter>);
+    renderApp("/form");
     const form = await screen.findByRole("form", { name: "Form mới (Context + derived state)" });
     const f = within(form);
     await user.type(f.getByLabelText("Họ tên"), "Phùng Khắc Khoan");
