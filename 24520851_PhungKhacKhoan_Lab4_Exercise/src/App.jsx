@@ -12,6 +12,7 @@ import { PEOPLE } from "./data/people.js";
 // import() động khiến Vite tách About.jsx ra một chunk JS riêng,
 // chỉ tải khi người dùng thật sự vào /about.
 const About = lazy(() => import("./pages/About.jsx"));
+const PersonDetail = lazy(() => import("./people/PersonDetail.jsx"));
 
 // Ex 1.2 — Cú pháp khai báo React Router v7:
 // - <Routes> thay cho <Switch> (thuật toán khớp theo độ cụ thể, không cần "exact").
@@ -31,9 +32,19 @@ export default function App() {
             </Suspense>
           }
         />
-        {/* Ex 1.2.2 — Route lồng 2 cấp: /people (layout) -> index */}
+        {/* Ex 1.2.2 — Route lồng 2 cấp: /people (layout) -> index | :id */}
         <Route path="people" element={<PeopleLayout people={PEOPLE} />}>
           <Route index element={<PeopleIndex />} />
+          {/* :id là tham số động, đọc bằng useParams() trong PersonDetail */}
+          <Route
+            path=":id"
+            element={
+              // Skeleton cao 190px ≈ chiều cao thẻ hồ sơ thật => không nhảy layout
+              <Suspense fallback={<Skeleton lines={4} minHeight={190} />}>
+                <PersonDetail people={PEOPLE} />
+              </Suspense>
+            }
+          />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Route>
