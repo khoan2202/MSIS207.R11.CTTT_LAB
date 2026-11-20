@@ -22,7 +22,7 @@ Mỗi task: contract → test → code → kiểm tra → commit.
 - [x] Giao diện swipe: bàn phím ←/→/↑/Backspace + pointer kéo thả
 
 ## HW3 — Full-Stack Esports Fair-Play Appeal Tribunal
-- [ ] Contract + luật validate dùng chung client/server
+- [x] Contract + luật validate dùng chung client/server
 - [ ] Backend: Dossier/Appeal models, `/api/time`, `/api/dossiers/:playerID`, `/api/appeals`
 - [ ] Route `/dossier/:playerID` + ma trận bất tương xứng (derived)
 - [ ] Hook `useAppealSlaTimer` không trôi (đồng bộ đồng hồ server + visibilitychange)
