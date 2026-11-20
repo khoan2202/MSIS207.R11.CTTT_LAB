@@ -23,7 +23,7 @@ Mỗi task: contract → test → code → kiểm tra → commit.
 - [x] Trang đổi kênh `nasa`, `esports-tribunal`, `notNasa`
 
 ## Live Defense Challenge Bank
-- [ ] URL Search Params Sync
+- [x] URL Search Params Sync
 - [ ] Cross-Field Validation
 - [ ] Auto-Retry Backoff
 - [ ] Protected Route Guard
