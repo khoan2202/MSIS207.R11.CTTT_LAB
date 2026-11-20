@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { API_URL, fetchJson } from "./api.js";
+import { fetchWithRetry } from "./fetchWithRetry.js";
 
 // Sprint 3 contract — useForumMessages(forumId)
 // => { data, loading, error, postMessage(payload), reload() }
@@ -11,7 +12,9 @@ import { API_URL, fetchJson } from "./api.js";
 //    tới nơi, nó cũng không được ghi đè dữ liệu của kênh mới.
 // 3) Kết quả lưu kèm "key" của request; loading là DERIVED STATE
 //    (key hiện tại khác key của kết quả) => không cần setLoading(true) trong effect.
-export function useForumMessages(forumId) {
+// 4) (Live Defense #3) GET dùng fetchWithRetry: lỗi tạm thời được thử lại theo
+//    exponential backoff; đổi kênh giữa chừng thì abort cả lần chờ retry.
+export function useForumMessages(forumId, { retries = 3, baseDelay = 300 } = {}) {
   const [version, setVersion] = useState(0); // tăng để refetch sau khi POST
   const [result, setResult] = useState({ key: null, data: [], error: null });
   const requestKey = `${forumId}#${version}`;
@@ -21,8 +24,11 @@ export function useForumMessages(forumId) {
 
     const fetchMessages = async () => {
       try {
-        const data = await fetchJson(`${API_URL}/api/messages/${encodeURIComponent(forumId)}`, {
+        const data = await fetchWithRetry(`${API_URL}/api/messages/${encodeURIComponent(forumId)}`, {
           signal: controller.signal,
+          retries,
+          baseDelay,
+          onRetry: ({ attempt, delay }) => console.info(`[retry] ${forumId}: lần ${attempt} sau ${delay}ms`),
         });
         if (!controller.signal.aborted) setResult({ key: requestKey, data, error: null });
       } catch (err) {
@@ -33,7 +39,7 @@ export function useForumMessages(forumId) {
 
     fetchMessages();
     return () => controller.abort();
-  }, [forumId, requestKey]);
+  }, [forumId, requestKey, retries, baseDelay]);
 
   const postMessage = useCallback(
     async (payload) => {
