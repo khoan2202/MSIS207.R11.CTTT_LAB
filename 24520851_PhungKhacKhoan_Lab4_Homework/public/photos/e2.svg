@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Tờ biên bản nền xanh ngọc có các dòng chữ và con dấu đỏ số 02">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="hsl(160 70% 55%)"/><stop offset="1" stop-color="hsl(190 80% 82%)"/></linearGradient></defs>
+<rect width="800" height="600" fill="hsl(160 30% 88%)"/>
+<rect x="150" y="70" width="500" height="470" rx="16" fill="#fff" stroke="hsl(160 25% 60%)" stroke-width="4"/>
+<rect x="190" y="100" width="260" height="22" rx="8" fill="hsl(160 45% 35%)"/><rect x="190" y="150" width="367" height="12" rx="6" fill="hsl(160 20% 45%)"/><rect x="190" y="188" width="330" height="12" rx="6" fill="hsl(160 20% 70%)"/><rect x="190" y="226" width="293" height="12" rx="6" fill="hsl(160 20% 70%)"/><rect x="190" y="264" width="256" height="12" rx="6" fill="hsl(160 20% 70%)"/><rect x="190" y="302" width="379" height="12" rx="6" fill="hsl(160 20% 45%)"/><rect x="190" y="340" width="342" height="12" rx="6" fill="hsl(160 20% 70%)"/><rect x="190" y="378" width="305" height="12" rx="6" fill="hsl(160 20% 70%)"/><rect x="190" y="416" width="268" height="12" rx="6" fill="hsl(160 20% 70%)"/><rect x="190" y="454" width="231" height="12" rx="6" fill="hsl(160 20% 45%)"/>
+<circle cx="560" cy="460" r="52" fill="none" stroke="hsl(355 75% 45%)" stroke-width="8" transform="rotate(-15 560 460)"/>
+<text x="560" y="468" font-family="sans-serif" font-size="22" font-weight="700" text-anchor="middle" fill="hsl(355 75% 45%)" transform="rotate(-15 560 460)">#02</text>
+</svg>

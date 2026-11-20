@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Ba ngọn núi xanh lục dưới bầu trời cam và mặt trời vàng">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="hsl(28 70% 55%)"/><stop offset="1" stop-color="hsl(58 80% 82%)"/></linearGradient></defs>
+<rect width="800" height="600" fill="url(#sky)"/>
+<circle cx="200" cy="180" r="70" fill="hsl(48 95% 70%)"/>
+<path d="M0 600 L180 260 L360 600Z" fill="hsl(168 35% 35%)"/>
+<path d="M220 600 L460 220 L700 600Z" fill="hsl(178 30% 28%)"/>
+<path d="M480 600 L680 300 L800 420 L800 600Z" fill="hsl(158 32% 40%)"/>
+<rect y="500" width="800" height="100" fill="hsl(148 40% 30%)" opacity=".85"/>
+</svg>
