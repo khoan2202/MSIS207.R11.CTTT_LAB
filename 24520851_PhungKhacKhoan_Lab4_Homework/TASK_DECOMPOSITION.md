@@ -12,7 +12,7 @@ Mỗi task: contract → test → code → kiểm tra → commit.
 ## HW1 — Production Multi-Route Photo & Evidence Gallery
 - [x] Dữ liệu ảnh + ảnh SVG tối ưu (có width/height)
 - [x] Lưới ảnh + lọc theo category đồng bộ `useSearchParams`
-- [ ] Lightbox `<dialog>` deep link `?photo=`, focus management, phím ←/→
+- [x] Lightbox `<dialog>` deep link `?photo=`, focus management, phím ←/→
 - [ ] Kiểm tra Lighthouse + accessibility
 
 ## HW2 — Full-Stack Card-Swipe Deck ("Hẹn Hò Nhưng Không Yêu")
