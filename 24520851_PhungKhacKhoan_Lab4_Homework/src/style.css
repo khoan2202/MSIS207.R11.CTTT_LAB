@@ -137,3 +137,7 @@ th, td { text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid var
 thead th { background: #f2f4f7; }
 .current-row { background: #eef4ff; font-weight: 600; }
 @media (max-width: 760px) { .dossier-frame { grid-template-columns: 1fr; } .kv div { grid-template-columns: 1fr; } }
+.sla h2 { margin-top: 0; }
+.sla-clock { font-size: 2.25rem; font-weight: 700; font-variant-numeric: tabular-nums; margin: 0.25rem 0; }
+.sla-warning .sla-clock { color: #b54708; }
+.sla-critical .sla-clock, .sla-expired .sla-clock { color: var(--danger); }

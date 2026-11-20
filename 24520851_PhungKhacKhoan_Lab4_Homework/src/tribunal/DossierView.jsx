@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import { useFetchJson } from "../lib/useFetchJson.js";
 import MatrixTable from "./MatrixTable.jsx";
+import SlaCountdown from "./SlaCountdown.jsx";
 import Skeleton from "../components/Skeleton.jsx";
 import NotFound from "../pages/NotFound.jsx";
 
@@ -42,6 +43,7 @@ export default function DossierView() {
           {dossier.evidence.map((e) => <li key={e.label}><strong>{e.label}:</strong> {e.note}</li>)}
         </ul>
       </article>
+      <SlaCountdown deadline={dossier.appealDeadline} />
       <MatrixTable dossier={dossier} />
     </div>
   );

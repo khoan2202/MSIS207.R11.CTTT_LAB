@@ -25,7 +25,7 @@ Mỗi task: contract → test → code → kiểm tra → commit.
 - [x] Contract + luật validate dùng chung client/server
 - [x] Backend: Dossier/Appeal models, `/api/time`, `/api/dossiers/:playerID`, `/api/appeals`
 - [x] Route `/dossier/:playerID` + ma trận bất tương xứng (derived)
-- [ ] Hook `useAppealSlaTimer` không trôi (đồng bộ đồng hồ server + visibilitychange)
+- [x] Hook `useAppealSlaTimer` không trôi (đồng bộ đồng hồ server + visibilitychange)
 - [ ] Form khiếu nại Context, validate real-time, gửi lên server
 
 ## Hoàn tất
