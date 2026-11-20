@@ -29,9 +29,16 @@ export const RULES = {
     if (!/[A-Za-z]/.test(v) || !/\d/.test(v)) return "Mật khẩu cần có cả chữ và số.";
     return "";
   },
+  // Live Defense #2 — Cross-field validation: rule đọc field khác qua tham số thứ 2.
+  // Vẫn là hàm thuần trong render => đổi "password" thì lỗi "confirmPassword"
+  // cập nhật NGAY trong cùng lần render, không cần useEffect theo dõi password.
+  confirmPassword: (v, all) => {
+    if (!v) return "Vui lòng nhập lại mật khẩu.";
+    return v === all.password ? "" : "Mật khẩu nhập lại không khớp.";
+  },
 };
 
-export const INITIAL_VALUES = { fullName: "", email: "", age: "", password: "" };
+export const INITIAL_VALUES = { fullName: "", email: "", age: "", password: "", confirmPassword: "" };
 
 // Trả về object chỉ chứa các field đang lỗi: { email: "..." }.
 // Object rỗng => form hợp lệ.

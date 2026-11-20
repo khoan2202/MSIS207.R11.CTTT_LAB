@@ -24,7 +24,7 @@ Mỗi task: contract → test → code → kiểm tra → commit.
 
 ## Live Defense Challenge Bank
 - [x] URL Search Params Sync
-- [ ] Cross-Field Validation
+- [x] Cross-Field Validation
 - [ ] Auto-Retry Backoff
 - [ ] Protected Route Guard
 

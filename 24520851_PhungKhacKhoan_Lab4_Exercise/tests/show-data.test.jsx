@@ -21,6 +21,7 @@ describe("Sprint 2 — ShowData inspector", () => {
     await user.type(f.getByLabelText("Email"), "24520851@gm.uit.edu.vn");
     await user.type(f.getByLabelText("Tuổi"), "20");
     await user.type(f.getByLabelText("Mật khẩu"), "lab4react19");
+    await user.type(f.getByLabelText("Nhập lại mật khẩu"), "lab4react19");
     await user.click(f.getByRole("button", { name: "Gửi" }));
     const inspector = screen.getByRole("region", { name: "Dữ liệu đã gửi" });
     expect(inspector.textContent).toContain("Phùng Khắc Khoan");

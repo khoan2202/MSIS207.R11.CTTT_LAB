@@ -56,6 +56,7 @@ export function SimpleForm({ onValidSubmit = () => {}, title = "Form mới (Cont
         <InputField name="email" label="Email" type="email" autoComplete="email" />
         <InputField name="age" label="Tuổi" type="number" inputMode="numeric" hint="Từ 16 đến 100." />
         <InputField name="password" label="Mật khẩu" type="password" autoComplete="new-password" hint="Ít nhất 8 ký tự, có chữ và số." />
+        <InputField name="confirmPassword" label="Nhập lại mật khẩu" type="password" autoComplete="new-password" />
         <button type="submit">Gửi</button>
       </form>
     </FormContext.Provider>

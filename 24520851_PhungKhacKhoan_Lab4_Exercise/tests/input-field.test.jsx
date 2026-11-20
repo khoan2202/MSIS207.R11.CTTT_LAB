@@ -26,7 +26,7 @@ describe("Sprint 2 — InputField validation", () => {
     const onValid = vi.fn();
     render(<SimpleForm onValidSubmit={onValid} />);
     await user.click(screen.getByRole("button", { name: "Gửi" }));
-    expect(screen.getByRole("alert").textContent).toContain("4 trường");
+    expect(screen.getByRole("alert").textContent).toContain("5 trường");
     expect(document.activeElement).toBe(screen.getByLabelText("Họ tên"));
     expect(onValid).not.toHaveBeenCalled();
   });

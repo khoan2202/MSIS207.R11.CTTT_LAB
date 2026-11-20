@@ -2,11 +2,11 @@ import { renderHook } from "@testing-library/react";
 import { validateForm, INITIAL_VALUES } from "../src/form/validateForm.js";
 import { useFormContext } from "../src/form/FormContext.js";
 
-const valid = { fullName: "Khoan", email: "khoan@uit.edu.vn", age: "20", password: "abc12345" };
+const valid = { fullName: "Khoan", email: "khoan@uit.edu.vn", age: "20", password: "abc12345", confirmPassword: "abc12345" };
 
 describe("Sprint 2 — validateForm (pure)", () => {
   it("form rỗng báo lỗi ở mọi field bắt buộc", () => {
-    expect(Object.keys(validateForm(INITIAL_VALUES))).toEqual(["fullName", "email", "age", "password"]);
+    expect(Object.keys(validateForm(INITIAL_VALUES))).toEqual(["fullName", "email", "age", "password", "confirmPassword"]);
   });
   it("dữ liệu hợp lệ => object lỗi rỗng", () => {
     expect(validateForm(valid)).toEqual({});
@@ -19,6 +19,11 @@ describe("Sprint 2 — validateForm (pure)", () => {
     ["fullName", " K ", /2 ký tự/],
   ])("%s = %j bị bắt lỗi", (field, value, msg) => {
     expect(validateForm({ ...valid, [field]: value })[field]).toMatch(msg);
+  });
+  it("cross-field: confirmPassword phụ thuộc password", () => {
+    expect(validateForm({ ...valid, confirmPassword: "abc1234X" }).confirmPassword).toMatch(/không khớp/);
+    // đổi password (không đụng confirm) cũng làm confirm lỗi ngay
+    expect(validateForm({ ...valid, password: "newpass99" }).confirmPassword).toMatch(/không khớp/);
   });
   it("là hàm thuần: gọi 2 lần cho cùng kết quả, không đổi input", () => {
     const input = { ...valid, email: "x" };
