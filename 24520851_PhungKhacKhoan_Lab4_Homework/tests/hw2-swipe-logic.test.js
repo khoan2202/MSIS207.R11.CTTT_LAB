@@ -26,6 +26,12 @@ describe("HW2 — LIFO undo stack", () => {
     expect(one).toHaveLength(1);
   });
 
+  it("undo kèm clientId chỉ pop đúng lượt đó (chống double-press)", () => {
+    const h = [e("a", "like"), e("b", "nope")];
+    const once = historyReducer(h, { type: "undo", clientId: "b" });
+    expect(historyReducer(once, { type: "undo", clientId: "b" })).toEqual([e("a", "like")]);
+  });
+
   it("chặn swipe trùng profile", () => {
     const h = historyReducer([e("a", "like")], { type: "swipe", entry: e("a", "nope", "x") });
     expect(h).toHaveLength(1);

@@ -22,7 +22,11 @@ export function historyReducer(history, event) {
       if (history.some((h) => h.profileId === event.entry.profileId)) return history;
       return [...history, event.entry]; // push (bản sao mới, không mutate)
     case "undo":
-      return history.slice(0, -1); // pop phần tử cuối — LIFO
+      // pop phần tử cuối — LIFO. Nếu event mang clientId thì chỉ pop khi đúng lượt đó:
+      // bấm Backspace 2 lần quá nhanh (trước khi re-render) sẽ không pop nhầm lượt thứ hai
+      // mà server chưa hề nhận lệnh DELETE.
+      if (event.clientId && history.at(-1)?.clientId !== event.clientId) return history;
+      return history.slice(0, -1);
     case "remove":
       // Rollback một lượt cụ thể khi server từ chối lưu.
       return history.filter((h) => h.clientId !== event.clientId);
