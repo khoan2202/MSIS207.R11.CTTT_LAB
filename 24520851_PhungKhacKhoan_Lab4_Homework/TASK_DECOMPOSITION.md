@@ -13,7 +13,7 @@ Mỗi task: contract → test → code → kiểm tra → commit.
 - [x] Dữ liệu ảnh + ảnh SVG tối ưu (có width/height)
 - [x] Lưới ảnh + lọc theo category đồng bộ `useSearchParams`
 - [x] Lightbox `<dialog>` deep link `?photo=`, focus management, phím ←/→
-- [ ] Kiểm tra Lighthouse + accessibility
+- [x] Kiểm tra Lighthouse + accessibility
 
 ## HW2 — Full-Stack Card-Swipe Deck ("Hẹn Hò Nhưng Không Yêu")
 - [ ] Logic thuần: LIFO undo stack + điểm bất đối xứng (derived)
